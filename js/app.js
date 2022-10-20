@@ -88,23 +88,15 @@
         enableScroll(delta);
       }
       if (delta < 0 && sliderRow.scrollLeft >= sliderRow.scrollWidth - sliderRow.clientWidth) {
-        sliderRow.classList.add("BG"); //добавление класс в конце горизонтального слайдера
+        sliderRow.classList.add("BG"); //добавление класса на последнем слайде горизонтального слайдера
         enableScroll(delta);
       }
       scrollHorizontally(e);
     }
-    console.log(
-      delta,
-      window.scrollY,
-      sliderRow.scrollLeft,
-      sliderRow.scrollWidth - sliderRow.clientWidth
-    );
   }
 
   if (document.addEventListener) {
     // IE9, Chrome, Safari, Opera
-    console.dir(sliderRow);
-    //sliderRow.addEventListener('mousewheel', () => {
     document.addEventListener(
       "mousewheel",
       () => {
