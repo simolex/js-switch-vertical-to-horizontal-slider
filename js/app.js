@@ -4,7 +4,7 @@
   const wrapperRow = document.querySelector(".wrapper");
 
   let enableVerticalScroll = true;
-  const deltaPosition = 90;
+  const deltaPosition = 50;
 
   const line = document.querySelector(".roadmap__line");
 
@@ -57,12 +57,12 @@
   }
 
   function disableScroll() {
-    window.scrollTo(window.scrollX, wrapperRow.offsetTop);
+    //window.scrollTo(window.scrollX, wrapperRow.offsetTop);
 
     document.body.style.marginTop = `-${wrapperRow.offsetTop}px`;
     document.body.style.position = "fixed";
     document.body.style.overflowY = "scroll";
-
+    document.body.style.width = "100%";
     enableVerticalScroll = false;
   }
 
@@ -71,6 +71,7 @@
     document.body.style.position = "";
     document.body.style.overflowY = "";
     document.body.style.marginTop = "";
+    document.body.style.width = "";
     window.scrollTo(window.scrollX, scrollTop - direct * deltaPosition);
     enableVerticalScroll = true;
   }
